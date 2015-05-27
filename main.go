@@ -33,7 +33,7 @@ func copyData(keys []string, from *redis.Client, to *redis.Client, force *bool) 
 		}
 		_, err = to.Restore(key, 0, dump).Result()
 		if err != nil {
-			log.Println("Warning", err.Error(), "skipping")
+			log.Println("Warning key exists", key, ",no --force, skipping")
 		}
 	}
 }
