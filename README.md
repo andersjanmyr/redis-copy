@@ -1,6 +1,6 @@
 # redis-copy
 
-Copies one Redis database to anther for Redis versions that don't support
+Copies one Redis database to another, for Redis versions that don't support
 `MIGRATE` and `SAVE`. It uses DUMP and RESTORE.
 
 
