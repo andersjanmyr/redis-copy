@@ -53,13 +53,9 @@ func main() {
 	log.Printf("Copying data from: '%s', to: '%s'\n", flag.Args()[0], flag.Args()[1])
 	from := NewClient(flag.Args()[0])
 	to := NewClient(flag.Args()[1])
-	var cursor int64
-	var keys []string
-	var err error
-
 	for {
 		scanCmd := from.Scan(cursor, "*", 100)
-		cursor, keys, err = scanCmd.Result()
+		cursor, keys, err := scanCmd.Result()
 		if err != nil {
 			log.Fatal(err)
 		}
