@@ -77,7 +77,7 @@ func main() {
 		scanCmd *redis.ScanCmd
 	)
 	for {
-		scanCmd = from.Scan(cursor, "*", 2)
+		scanCmd = from.Scan(cursor, "*", 100)
 		cursor, keys, err = scanCmd.Result()
 		if err != nil {
 			log.Fatal(err)
