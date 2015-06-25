@@ -42,7 +42,8 @@ func copyData(keys []string, from *redis.Client, to *redis.Client) {
 		}
 		_, err = to.Restore(key, 0, dump).Result()
 		if err != nil {
-			log.Println("Warning key exists", key, ",no --force, skipping")
+			log.Println("Warning key exists", key, " no --force, skipping")
+			verboseLog("Warning %v", err)
 		}
 	}
 }
@@ -69,10 +70,15 @@ func main() {
 	verboseLog("Copying data from: '%s', to: '%s'\n", flag.Args()[0], flag.Args()[1])
 	from := NewClient(flag.Args()[0])
 	to := NewClient(flag.Args()[1])
+	var (
+		cursor  int64
+		keys    []string
+		err     error
+		scanCmd *redis.ScanCmd
+	)
 	for {
-		var cursor int64
-		scanCmd := from.Scan(cursor, "*", 100)
-		cursor, keys, err := scanCmd.Result()
+		scanCmd = from.Scan(cursor, "*", 2)
+		cursor, keys, err = scanCmd.Result()
 		if err != nil {
 			log.Fatal(err)
 		}
