@@ -16,19 +16,19 @@ or with `curl`.
 
 ### Links
 
-* [OS X](https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.2/redis-copy-osx)
-* [Linux](https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.2/redis-copy-linux)
-* [Windows](https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.2/redis-copy.exe)
+* [OS X](https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.3/redis-copy-osx)
+* [Linux](https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.3/redis-copy-linux)
+* [Windows](https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.3/redis-copy.exe)
 
 ### Curl
 
 ```
 # OS X
-$ curl -L https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.2/redis-copy-osx \
+$ curl -L https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.3/redis-copy-osx \
   > /usr/local/bin/redis-copy
 
 # Linux
-$ curl -L https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.2/redis-copy-linux \
+$ curl -L https://github.com/andersjanmyr/redis-copy/releases/download/v1.0.3/redis-copy-linux \
   > /usr/local/bin/redis-copy
 
 # Make executable
