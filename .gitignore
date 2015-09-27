@@ -1,2 +1,4 @@
 redis-copy
 dist/
+bin/
+gopath
