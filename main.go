@@ -51,6 +51,7 @@ func copyData(keys []string, from *redis.Client, to *redis.Client) {
 func main() {
 	force = flag.Bool("force", false, "Overwrite existing keys")
 	verbose = flag.Bool("verbose", false, "Verbose output")
+	version := flag.Bool("version", false, "Show version")
 	help := flag.Bool("help", false, "Show help text")
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: redis-copy [options] <from> <to>\n")
@@ -59,6 +60,10 @@ func main() {
 	flag.Parse()
 	if *help {
 		flag.Usage()
+		os.Exit(0)
+	}
+	if *version {
+		fmt.Println(Version)
 		os.Exit(0)
 	}
 	if len(flag.Args()) < 2 {
